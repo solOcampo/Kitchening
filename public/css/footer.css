@@ -1,0 +1,14 @@
+footer{
+    text-align: center;
+}
+
+.home footer ul li{
+    background-color: var(--colorGris);
+    padding: 10px;
+    margin: 2px 0;
+}
+
+.home footer ul li a {
+    color: var(--colorBlanco);
+    text-transform: uppercase;
+}

@@ -1,10 +1,24 @@
-const express=require('express')
-const app=express()
-const path=require('path')
-const port=3010
+const livereload = require("livereload");
+const liveReloadServer = livereload.createServer();
 
-app.use(express.static(path.resolve(__dirname,'public')))
+const express = require('express')
+const connectLivereload = require("connect-livereload");
+const path = require('path')
+const app = express()
+const port = 3010
 
-app.get('/',(req,res)=> res.sendFile(path.join(__dirname,'views','index.html')))
+app.use(express.static(path.resolve(__dirname,'public')));
 
-app.listen(port,()=>console.log(`Se levanto el servidor en http://localhost: ${port}`))
+liveReloadServer.watch(path.join(__dirname, 'public'));
+app.use(connectLivereload());
+
+
+app.get('/', (req,res) => res.sendFile(path.join(__dirname, 'views', 'index.html')))
+
+liveReloadServer.server.once("connection", () => {
+    setTimeout(() => {
+      liveReloadServer.refresh("/");
+    }, 100);
+  });
+
+app.listen(port,() => console.log(`se levanto el servidor http://localhost:${port}`))

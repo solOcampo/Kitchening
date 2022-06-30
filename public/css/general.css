@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--colorNegro); ;
+}
+
+.home{
+    background-image: url('../images/bg-body.png');
+    width: 94%;
+    margin: 0 auto;
+}
