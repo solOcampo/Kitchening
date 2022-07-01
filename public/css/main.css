@@ -8,6 +8,17 @@
 .home main section .image{
     position: relative;
 }
+.home main section .image:hover .producto{
+    transform: scale(1.2);
+    position: relative;
+    transition: all 0.5s;
+    z-index: 10;
+}
+.home main section .image:hover .etiqueta{
+    z-index: 10;
+    transform: translateX(30px) translateY(-20px) scale(1.1);
+    transition: all 0.5s;
+}
 .home main section .producto{
     width: 100%;
 }
@@ -32,6 +43,9 @@
     /* text-align: center; */
     padding: 10px;
     color: var(--colorBlanco);
+}
+.home main section a.link:hover{
+    background-color: var(--colorRojo);
 }
 
 .home main section .ampliar{
