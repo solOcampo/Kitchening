@@ -43,6 +43,7 @@
     /* text-align: center; */
     padding: 10px;
     color: var(--colorBlanco);
+    transition: background-color .5s;
 }
 .home main section a.link:hover{
     background-color: var(--colorRojo);

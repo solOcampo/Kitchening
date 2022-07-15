@@ -1,3 +1,26 @@
+@keyframes rotarLogo {
+    0%{
+        -webkit-animation: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+    25%{
+        -webkit-animation: rotate3d(0, 0, 1, 90deg);
+        transform: rotate3d(0, 0, 1, 90deg);
+    }
+    50%{
+        -webkit-animation: rotate3d(0, 0, 1, 180deg);
+        transform: rotate3d(0, 0, 1, 180deg);
+    }
+    75%{
+        -webkit-animation: rotate3d(0, 0, 1, 270deg);
+        transform: rotate3d(0, 0, 1, 270deg);
+    }
+    100%{
+        -webkit-animation: rotate3d(0, 0, 1, 360deg);
+        transform: rotate3d(0, 0, 1, 360deg);
+    }
+}
+
 .home header{
     text-align: center;
 }
@@ -7,6 +30,7 @@
 .home header .logo img{
     border-radius: 50%;
     border: 1px solid var(--colorGris);
+    animation: rotarLogo 10s normal linear infinite;
 }
 .home header button{
     width: 50px;
@@ -37,13 +61,16 @@
         display: none;
     }
     .home header ul{
+        z-index: 50;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        
     }
     .home header ul li{
         width: 16%;
         font-size: 0.5rem;
+        transition: background-color .5s;
     }
     .home header ul li:hover{
         background-color: var(--colorRojo);
